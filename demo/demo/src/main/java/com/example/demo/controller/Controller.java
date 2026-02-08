@@ -18,23 +18,27 @@ public class Controller {
     }
 
     @GetMapping
-    public List<Tarefa> listaTarefas()
-    {
-        return repository.findAll();   //mostra todas as tarefas
+    public List<Tarefa> listaTarefas() {
+        return repository.findAll(); // mostra todas as tarefas
     }
-
-
 
     @GetMapping("/nova-tarefa")
     public Tarefa criarTarefa() {
 
         Tarefa t = new Tarefa();
-        t.setNome(null);            //nome
-        t.setXp(5);                 //xp    - todas as tarefas dão  de xp
-        t.setStatus(false);         //status    - todas as tarefas iniciam como false
+        t.setNome(null); // nome
+        t.setXp(0); // xp 
+        t.setStatus(false); // status - todas as tarefas iniciam como false
 
-        return repository.save(t);     // salva e mostra na tela nova tarefa 
- 
+        return repository.save(t); // salva e mostra na tela nova tarefa
+
+    }
+
+    @PostMapping // Aceita pedido de envio de dados
+    // transforma JSON em objeto Tarefa
+    public Tarefa criar(@RequestBody Tarefa novaTarefa) {
+
+        return repository.save(novaTarefa);
     }
 
 }

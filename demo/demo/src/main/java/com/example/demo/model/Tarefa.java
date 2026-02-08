@@ -17,7 +17,7 @@ public class Tarefa {
 
     private String nome;    // nome da tarefa
     private boolean status; // concluido ou não concluido
-    private int xp;         // quantidade de xp para gameficação
+    private Integer xp;         // quantidade de xp para gameficação
 
 
     //contrutor vazio 
@@ -27,21 +27,11 @@ public class Tarefa {
     //setters e getters
     public void setNome(String n) {nome = n;};
     public void setStatus(boolean s) {status = s;}
-    public void setXp(int x) {xp = x;}
+    public void setXp(Integer x) {xp = x;}
 
     public long getID() {return ID;}
     public String getNome() {return nome;}
     public boolean getStatus() {return status;}
-    public int getXp() {return xp;}
-
-
-
-
-
-
-
-
-
-
+    public Integer getXp() {return xp;}
 
 }
